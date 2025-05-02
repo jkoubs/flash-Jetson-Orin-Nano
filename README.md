@@ -14,34 +14,34 @@ This guide documents how to flash the **Jetson Orin Nano 8GB Developer Kit** wit
 
 ## Flashing Steps
 
-1. Download and install [SDK Manager](https://developer.nvidia.com/sdk-manager) from NVIDIA using the .deb package.Once installed, open SDK Manager and log into your NVIDIA Developer account to access JetPack options.
+1. Download and install [SDK Manager](https://developer.nvidia.com/sdk-manager) from NVIDIA using the .deb package. Once installed, open SDK Manager and log into your NVIDIA Developer account to access JetPack options.
 
 <div align="center">
-  <img src="doc/step01-1.png" alt="base" width="400"/>
+  <img src="doc/step01-1.png" alt="base" width="600"/>
 </div>
 
 
 
 2. Connect the Jetson Orin Nano Dev Kit to the host machine using the following three connections:
 
-* Recovery Mode: Bridge pins 9 (GND) and 10 (FC REC) with a jumper wire to enter recovery mode
+* **Recovery Mode:** Bridge pins `9 (GND)` and `10 (FC REC)` with a wire to enter recovery mode.
 
 <div align="center">
-  <img src="doc/recovery_mode_v2.png" alt="base" width="400"/>
+  <img src="doc/recovery_mode_v2.png" alt="base" width="600"/>
 </div>
 
-* USB Connection: Connect the Jetson’s USB-C port to your host PC
+* **USB Connection:** Connect the Jetson’s USB-C port to your host PC.
 
-* Power Supply: Plug in the Jetson via barrel jack or USB-C power
+* **Power Supply:** Power up the Jetson.
 
 <div align="center">
-  <img src="doc/hardware_connections.jpg" alt="base" width="400"/>
+  <img src="doc/hardware_connections.jpg" alt="base" width="600"/>
 </div>
 
 3. Once connected, it should recognize your board:
 
 <div align="center">
-  <img src="doc/step01-2.png" alt="base" width="400"/>
+  <img src="doc/step01-2.png" alt="base" width="600"/>
 </div>
 
 Then select **Jetson Orin Nano [GB developer kit version]** 
@@ -49,7 +49,7 @@ Then select **Jetson Orin Nano [GB developer kit version]**
 4. You should now be at `Step 02` of NVIDIA SDK Manager. You should now select the components to be downloaded and installed onto both your host machine and your Jetson.
 
 <div align="center">
-  <img src="doc/step02-1.png" alt="base" width="400"/>
+  <img src="doc/step02-1.png" alt="base" width="600"/>
 </div>
 
 There are two sections:
@@ -59,7 +59,7 @@ There are two sections:
 * **Target Components:** Downloaded to prepare the image that will be flashed onto your Jetson (Ubuntu image, CUDA runtime, libraries, etc.)
 
 <div align="center">
-  <img src="doc/step02-2.png" alt="base" width="400"/>
+  <img src="doc/step02-2.png" alt="base" width="600"/>
 </div>
 
 At the bottom of the SDK Manager interface, you are prompted to choose two folder locations:
@@ -79,7 +79,7 @@ When using external drives with SDK Manager, make sure they support fast sustain
 5. Flash Ubuntu 22.04 to the 512GB NVMe, setting up the default user and password during the pre-install step and choose the `USB` or `Ethernet` connection. No need to set proxy.
 
 <div align="center">
-  <img src="doc/flash.png" alt="base" width="400"/>
+  <img src="doc/flash.png" alt="base" width="600"/>
 </div>
 
 ## Headless Setup (Wi-Fi + SSH Access)
