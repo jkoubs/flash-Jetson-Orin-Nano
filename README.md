@@ -21,7 +21,6 @@ This guide documents how to flash the **Jetson Orin Nano 8GB Developer Kit** wit
 </div>
 
 
-
 2. Connect the Jetson Orin Nano Dev Kit to the host machine using the following three connections:
 
 * **Recovery Mode:** Bridge pins `9 (GND)` and `10 (FC REC)` with a wire to enter recovery mode.
@@ -64,9 +63,9 @@ There are two sections:
 
 At the bottom of the SDK Manager interface, you are prompted to choose two folder locations:
 
-* **Download Folder:** Where all JetPack component files are saved
+* **`Download Folder`:** Where all JetPack component files are saved
 
-* **Target HW Image Folder:** Where the root filesystem and flashable OS image is built before being deployed to your Jetson
+* **`Target HW Image Folder`:** Where the root filesystem and flashable OS image is built before being deployed to your Jetson
 
 To save space on my internal drive, I used an **external storage device** for both folders — but I initially chose a **regular USB SSD**, and SDK Manager **stalled at 0% during downloads** (as seen in the screenshot).
 
@@ -76,7 +75,9 @@ Turns out the drive or USB cable **couldn't handle the required read/write speed
 
 When using external drives with SDK Manager, make sure they support fast sustained I/O. Otherwise, downloads or flashing may freeze with no clear error.
 
-5. Flash Ubuntu 22.04 to the 512GB NVMe, setting up the default user and password during the pre-install step and choose the `USB` or `Ethernet` connection. No need to set proxy.
+5. During `Step 03` of the SDK Manager process (after selecting JetPack components), you’ll be prompted to choose where to install the OS on the Jetson. In the `Storage Device` dropdown, make sure to select `NVMe` as the target.
+
+6. **Flash Ubuntu 22.04** to the 512GB NVMe, setting up the default user and password during the pre-install step and choose the `USB` or `Ethernet` connection. No need to set proxy.
 
 <div align="center">
   <img src="doc/flash.png" alt="base" width="800"/>
