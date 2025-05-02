@@ -75,13 +75,23 @@ Turns out the drive or USB cable **couldn't handle the required read/write speed
 
 When using external drives with SDK Manager, make sure they support fast sustained I/O. Otherwise, downloads or flashing may freeze with no clear error.
 
-5. During `Step 03` of the SDK Manager process (after selecting JetPack components), you’ll be prompted to choose where to install the OS on the Jetson. In the `Storage Device` dropdown, make sure to select `NVMe` as the target.
-
-6. **Flash Ubuntu 22.04** to the 512GB NVMe, setting up the default user and password during the pre-install step and choose the `USB` or `Ethernet` connection. No need to set proxy.
+5. Once the everything has downloaded you can go the `Step 03`:
 
 <div align="center">
-  <img src="doc/flash.png" alt="base" width="800"/>
+  <img src="doc/step3-1.png" alt="base" width="800"/>
 </div>
+
+You’ll be prompted to choose where to install the OS on the Jetson. In the `Storage Device` dropdown, make sure to select `NVMe` as the target. Also you can set up your username and password.
+
+6. Still in `Step 03` you'll get:
+
+<div align="center">
+  <img src="doc/step3-2.png" alt="base" width="800"/>
+</div>
+
+Set up the default user and password during the pre-install step and choose the `USB` or `Ethernet` connection. No need to set proxy.
+
+7. **Flash Ubuntu 22.04** to the 512GB NVMe.
 
 **You have now flashed the Jetson Orin Nano 8GB Developer Kit with JetPack 6.2 (Ubuntu 22.04).**
 
