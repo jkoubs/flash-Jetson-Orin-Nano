@@ -83,5 +83,7 @@ When using external drives with SDK Manager, make sure they support fast sustain
   <img src="doc/flash.png" alt="base" width="800"/>
 </div>
 
+**You have now flashed the Jetson Orin Nano 8GB Developer Kit with JetPack 6.2 (Ubuntu 22.04).**
+
 ## Headless Setup (Wi-Fi + SSH Access)
 
