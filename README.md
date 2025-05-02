@@ -14,14 +14,17 @@ This guide documents how to flash the **Jetson Orin Nano 8GB Developer Kit** wit
 
 ## Flashing Steps
 
-1. Download and install [SDK Manager](https://developer.nvidia.com/sdk-manager) from NVIDIA using the .deb package. Once installed, open SDK Manager and log into your NVIDIA Developer account to access JetPack options.
+### 1. Install SDK Manager
+
+Download and install [SDK Manager](https://developer.nvidia.com/sdk-manager) from NVIDIA using the .deb package. Once installed, open SDK Manager and log into your NVIDIA Developer account to access JetPack options.
 
 <div align="center">
   <img src="doc/step01-1.png" alt="base" width="800"/>
 </div>
 
+### 2. Hardware Connections
 
-2. Connect the Jetson Orin Nano Dev Kit to the host machine using the following three connections:
+Connect the Jetson Orin Nano Dev Kit to the host machine using the following three connections:
 
 * **Recovery Mode:** Bridge pins `9 (GND)` and `10 (FC REC)` with a wire to enter recovery mode.
 
@@ -37,7 +40,9 @@ This guide documents how to flash the **Jetson Orin Nano 8GB Developer Kit** wit
   <img src="doc/hardware_connections.jpg" alt="base" width="800"/>
 </div>
 
-3. Once connected, it should recognize your board:
+### 3. SDK Manager Step 01
+
+Once connected, it should recognize your board:
 
 <div align="center">
   <img src="doc/step01-2.png" alt="base" width="800"/>
@@ -45,7 +50,9 @@ This guide documents how to flash the **Jetson Orin Nano 8GB Developer Kit** wit
 
 Then select **Jetson Orin Nano [GB developer kit version]** 
 
-4. You should now be at `Step 02` of NVIDIA SDK Manager. You should now select the components to be downloaded and installed onto both your host machine and your Jetson.
+### 4. SDK Manager Step 02
+
+You should now select the components to be downloaded and installed onto both your host machine and your Jetson.
 
 <div align="center">
   <img src="doc/step02-1.png" alt="base" width="800"/>
@@ -75,7 +82,7 @@ Turns out the drive or USB cable **couldn't handle the required read/write speed
 
 When using external drives with SDK Manager, make sure they support fast sustained I/O. Otherwise, downloads or flashing may freeze with no clear error.
 
-5. Once the everything has downloaded you can go the `Step 03`:
+### 5. SDK Manager Step 03
 
 <div align="center">
   <img src="doc/step3-1.png" alt="base" width="800"/>
@@ -83,7 +90,8 @@ When using external drives with SDK Manager, make sure they support fast sustain
 
 You’ll be prompted to choose where to install the OS on the Jetson. In the `Storage Device` dropdown, make sure to select `NVMe` as the target. Also you can set up your username and password.
 
-6. Still in `Step 03` you'll get:
+
+Still in `Step 03` you'll get:
 
 <div align="center">
   <img src="doc/step3-2.png" alt="base" width="800"/>
@@ -91,9 +99,40 @@ You’ll be prompted to choose where to install the OS on the Jetson. In the `St
 
 Set up the default user and password during the pre-install step and choose the `USB` or `Ethernet` connection. No need to set proxy.
 
-7. **Flash Ubuntu 22.04** to the 512GB NVMe.
+### 6. Flash
+
+**Flash Ubuntu 22.04** to the 512GB NVMe.
 
 **You have now flashed the Jetson Orin Nano 8GB Developer Kit with JetPack 6.2 (Ubuntu 22.04).**
 
 ## Headless Setup (Wi-Fi + SSH Access)
 
+### 1. Connect the Jetson to Wi-Fi
+
+* Connect a monitor and keyboard
+* Boot up the Jetson
+* Log in using the pre-configured username and password
+* Click the Wi-Fi icon in the top bar and connect to your network
+
+
+### 2. Find the Jetson’s IP Address
+
+```bash
+hostname -I
+```
+
+This returns the local IP, for example:
+
+```bash
+192.168.1.174
+```
+
+### 3. Connect from Your Main Computer via Wi-Fi
+
+From your host machine (on the same network), SSH into the Jetson:
+
+```bash
+ssh jetson@192.168.1.174
+```
+
+**You now have full headless access — no USB, no monitor needed.**
